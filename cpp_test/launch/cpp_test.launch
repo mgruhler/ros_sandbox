@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="cpp_test" pkg="cpp_test" type="cpp_test_node" />
+
+</launch>
