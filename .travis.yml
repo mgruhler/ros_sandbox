@@ -16,12 +16,12 @@ env:
     - DEFAULT_ROSINSTALL="https://raw.githubusercontent.com/ipa320/care-o-bot/${CI_ROS_DISTRO}_dev/.travis.rosinstall"
 
 before_config:
-  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/DOCKERFILE .
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/DOCKERFILE .
 
 install:
-  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/.travis.install.sh
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/.travis.install.sh
   - bash .travis.install.sh
 
 script:
-  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/.travis.script.sh
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/.travis.script.sh
   - bash .travis.script.sh
