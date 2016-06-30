@@ -11,14 +11,17 @@ env:
     - CATKIN_WS_SRC=${CATKIN_WS}/src
     - CATKIN_WS_UNDERLAY=~/catkin_ws_underlay
     - CATKIN_WS_UNDERLAY_SRC=${CATKIN_WS_UNDERLAY}/src
-    - CI_ROS_DISTRO="indigo"
+    - CI_ROS_DISTRO="kinetic"
     - ROS_PARALLEL_JOBS=-j1
     - DEFAULT_ROSINSTALL="https://raw.githubusercontent.com/ipa320/care-o-bot/${CI_ROS_DISTRO}_dev/.travis.rosinstall"
 
+before_config:
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/DOCKERFILE .
+
 install:
-  - wget https://raw.githubusercontent.com/ipa320/care-o-bot/${CI_ROS_DISTRO}_dev/.travis.install.sh
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/.travis.install.sh
   - bash .travis.install.sh
 
 script:
-  - wget https://raw.githubusercontent.com/ipa320/care-o-bot/${CI_ROS_DISTRO}_dev/.travis.script.sh
+  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/kinetic_test/.travis.script.sh
   - bash .travis.script.sh
