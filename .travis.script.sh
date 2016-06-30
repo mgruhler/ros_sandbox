@@ -22,6 +22,12 @@ if [[ "$ROS_DISTRO" == "kinetic" ]] && ! [ "$IN_DOCKER" ]; then
   if [ $retval -eq 0 ]; then HIT_ENDOFSCRIPT=true; success 0; else exit; fi
 fi
 
+if [ "$IN_DOCKER" ]; then
+  wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/.travis.install.sh
+  bash .travis.install.sh
+fi
+
+
 # create empty overlay workspace
 mkdir -p $CATKIN_WS_SRC
 source $CATKIN_WS_UNDERLAY/install/setup.bash > /dev/null 2>&1 # source install space of underlay

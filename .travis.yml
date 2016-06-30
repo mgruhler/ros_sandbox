@@ -18,10 +18,6 @@ env:
 before_config:
   - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/DOCKERFILE .
 
-install:
-  - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/.travis.install.sh
-  - bash .travis.install.sh
-
 script:
   - wget https://raw.githubusercontent.com/ipa-mig/ros_sandbox/travis_test/.travis.script.sh
   - bash .travis.script.sh
