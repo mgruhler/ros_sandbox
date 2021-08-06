@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
-  <node name="py_test" pkg="py_test" type="pytest.py" />
+  <arg name="dir" value="$(find py_test)" />
+
+  <node name="py_test" pkg="py_test" type="pytest.py" output="screen">
+    <param name="dir" value="$(arg dir)"/>
+  </node>
 
 </launch>
